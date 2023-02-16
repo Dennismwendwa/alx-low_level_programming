@@ -3,7 +3,7 @@
 /**
   * Entry - main Entry point
   *
-  * Return: Always 0 (success)
+  * Return: Always 0 (Success)
   */
 
 int main(void)
@@ -15,11 +15,11 @@ long longNum;
 long long doubleNum;
 float money;
 
-printf("Size of the char is %lu\n", (unsigned)sizeof(letters));
-printf("Size of the int is %lu\n", (unsigned)sizeof(myNum));
-printf("Size of the long is %lu\n", (unsigned)sizeof(longNum));
-printf("Size of the long long is %lu\n", (unsigned)sizeof(doubleNum));
-printf("Size of the float is %lu\n", (unsigned)sizeof(money));
+printf("Size of a char: %lu byte(s)\n", (unsigned long)sizeof(letters));
+printf("Size of an int: %lu byte(s)\n", (unsigned long)sizeof(myNum));
+printf("Size of a long int: %lu byte(s)\n", (unsigned long)sizeof(longNum));
+printf("Size of a long long int: %lu byte(s)\n", (unsigned long)sizeof(doubleNum));
+printf("Size of a float: %lu byte(s)\n", (unsigned long)sizeof(money));
 
 return (0);
 }
