@@ -1,26 +1,25 @@
 #include <stdio.h>
 
 /**
-  * 3-islower.c:- (int c) - prints letters.
+  * _islower - function that checks for lowercase letters
   *
   * Return:- Always 0 (succuss)
   *
-  * int c:- - One peremeter int c is required.
+  * @c: one letter input
   */
 
 int _islower(int c)
 {
-	int ch;
 
-	if (ch >= 'A' && ch <= 'Z')
+	if (c >= 'a' && c <= 'a')
 	{
-		return (0);
+		return (1);
 
 
 	}
-	else if (ch >= 'a' && ch <= 'z')
+	else
 	{
-		return (1);
+		return (0);
 
 
 	}
