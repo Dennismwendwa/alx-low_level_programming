@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
-  * print_alphabe_x10 - prints alphabet 10 times
-  * 
-  * Ruturn:- Always 0 (0)
+  * print_alphabet_x10 - prints letters.
+  *
+  * Ruturn:- Always 0 (success)
   */
 
 void print_alphabet_x10(void)
