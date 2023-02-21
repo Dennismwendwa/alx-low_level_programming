@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
   * print_alphabet_x10 - prints letters.
@@ -17,12 +18,12 @@ void print_alphabet_x10(void)
 
 		while (alpha <= 'z')
 		{
-			putchar(alpha);
+			_putchar(alpha);
 			alpha++;
 
 		}
 
-		putchar('\n');
+		_putchar('\n');
 		k++;
 
 	}
