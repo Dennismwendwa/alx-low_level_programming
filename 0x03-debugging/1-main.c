@@ -13,7 +13,7 @@ int main(void)
 
         i = 0;
 
-       /* while (i < 10) we need to increase the value of i every loop, i++ */
+       /* while (i < 10)*/
        /* {*/
                /* putchar(i);*/
        /* }*/
