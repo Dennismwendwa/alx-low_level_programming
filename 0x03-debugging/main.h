@@ -3,4 +3,4 @@
   * my libraly
   */
 
-void positive_or_negative(int k);
+void positive_or_negative(int i);
