@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
-  * print_number:- function that prints numbers 0-9.
+  * print_numbers - Print the numbers since 0 up to 9
   * Return:- Always 0 (success)
   */
 
