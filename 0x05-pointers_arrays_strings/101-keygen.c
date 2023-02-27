@@ -12,12 +12,12 @@ int main(void)
 {
 	int myrand;
 	int count;
-	int total = 5084;
+	int total = 2772;
 
 	srand(time(NULL));
-		for (count = 0; total > 20; count++)
+		for (count = 0; total > 122; count++)
 		{
-			myrand = (rand() % 108) + 1;
+			myrand = (rand() % 125) + 1;
 			printf("%dc", myrand);
 			total -= myrand;
 
