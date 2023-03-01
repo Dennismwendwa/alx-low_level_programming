@@ -6,6 +6,7 @@
   * @dest:- single user input.
   * @src:- single user input.
   * @n:- naximum number of bytes.
+  * Return:- Always 0 (success)
   */
 
 
@@ -18,7 +19,7 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		src_len++;
 	}
-	
+
 	for (index = 0; src[index] && index < n; index++)
 	{
 		dest[index] = src[index];
