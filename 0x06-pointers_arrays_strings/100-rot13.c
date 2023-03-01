@@ -10,20 +10,27 @@
 
 char *rot13(char *s)
 {
-	int i;
+	int i = 0;
+	int j;
 
-	char storeh[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char storel[] = "nopqrstuvwxyzabcdefghijklm";
+	char letters[52] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+		'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+		'V', 'W', 'X', 'Y', 'Z'};
+	char rot13key[52] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i',
+		'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u',
+		'v', 'w', 'x', 'y', 'z'};
 
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (s[i])
 	{
-		if ((s[i] > 64 && s[i] < 91) || (s[i] > 96 && s[i] < 123))
+		for (j = 0; j < 52; j++)
 		{
-			s[i] = (s[i] > 25) ? storel[s[i] - 97] : storeh[s[i] - 65];
-
+			if (s[i] == letters[j])
+			{
+				s[i] = rot13key[j];
+				break;
+			}
 		}
-
+		i++;
 	}
 	return (s);
 
