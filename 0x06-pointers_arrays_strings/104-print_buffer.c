@@ -21,7 +21,7 @@ void print_buffer(char *b, int size)
 		{
 			if ((i + buff) >= size)
 			{
-				printf("  ");
+				printf("   ");
 			}
 			else
 			{
