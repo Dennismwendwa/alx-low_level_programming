@@ -16,7 +16,6 @@ int main(void)
 	int diff1;
 	int diff2;
 
-
 	srand(time(0));
 
 	while (total < 2772)
@@ -25,7 +24,6 @@ int main(void)
 		total += password[index++];
 
 	}
-
 	password[index] = '\0';
 
 	if (total != 2772)
@@ -42,11 +40,8 @@ int main(void)
 			{
 				password[index] -= diff1;
 				break;
-
 			}
-
 		}
-
 		for (index = 0; password[index]; index++)
 		{
 			if (password[index] >= (33 + diff2))
@@ -54,13 +49,9 @@ int main(void)
 				password[index] -= diff2;
 				break;
 			}
-
 		}
-
-
 	}
 	printf("%s", password);
-
 	return (0);
 }
 
