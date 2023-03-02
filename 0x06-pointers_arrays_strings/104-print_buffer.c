@@ -17,11 +17,11 @@ void print_buffer(char *b, int size)
 	{
 		printf("%08x: ", buff);
 
-		for (i = 0; i < 10; i++)
+		for (i = 0; i <= 10; i++)
 		{
 			if ((i + buff) >= size)
 			{
-				printf("   ");
+				printf("  ");
 			}
 			else
 			{
