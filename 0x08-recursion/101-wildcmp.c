@@ -2,9 +2,9 @@
 
 /**
   * wildcmp - Function that compares two strings.
-  * @*s1:- single user input.
-  * @*s2:- single user input.
-  * return:- Always 0 (success)
+  * @s1:- single user input.
+  * @s2:- single user input.
+  * Return:- Always 0 (success)
   */
 
 
