@@ -6,7 +6,8 @@
   * @len:- single user input.
   * @i:- single user input.
   * @len:- varible tracker.
-  * return:- Always 0 (success)
+  * @str:- single user input.
+  * Return:- Always 0 (success)
   */
 
 int palindromeString(char *str, int len, int i)
