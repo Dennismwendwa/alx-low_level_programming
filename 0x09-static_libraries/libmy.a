@@ -1,0 +1,467 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "main.h>
+
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+
+}
+
+
+/**
+  * _islower - function that checks for lowercase letters
+  *
+  * Return:- Always 0 (succuss)
+  * @c: one letter input
+  */
+
+
+int _islower(int c)
+{
+	if (c >= 'a' && c <= 'z')
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+
+
+/**
+  * _isalpha - this is a functions which checks for alphabetic characters.
+  *
+  * @c: single letter input
+  *
+  * Return:- Always 0 (success)
+  */
+
+
+int _isalpha(int c)
+{
+	if (((c >= 'a') && (c <= 'z')) || ((c >= 'A') && (c <= 'Z')))
+	{
+		return (1);
+
+	}
+	else
+	{
+		return (0);
+
+	}
+}
+
+
+/**
+  * _abs - function that computes absolute values of integer.
+  *
+  * @ab: single number input.
+  *
+  * Return:- always 0 (success)
+  */
+
+int _abs(int n)
+{
+	return (ab * ((ab > 0) - (ab < 0)));
+}
+
+
+
+/**
+  * _isupper;- F;unction that checks for uppercase.
+  * Return:- Always 0 (success)
+  * @c:- input single digit.
+  */
+
+int _isupper(int c)
+{
+	if (c >= 'A' && c <= 'Z')
+	{
+		return (1);
+
+	}
+	else
+	{
+		return (0);
+
+	}
+}
+
+
+
+/**
+  * _isdigit - function that checks if number is digit.
+  * Return:- Always 0 (success)
+  * @c:- single input.
+  */
+
+int _isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+	{
+
+		return (1);
+
+
+	}
+	else
+	{
+		return (0);
+
+	}
+}
+
+
+/**
+  * _strlen - a Function that checks the length of string.
+  * @s:- single user input.
+  * Return:- Always 0 (success).
+  */
+
+int _strlen(char *s)
+{
+	int i = 1;
+	int leng = 0;
+	char str = s[0];
+
+	while (str != '\0')
+	{
+		leng++;
+		str = s[i++];
+	}
+
+	return (leng);
+}
+
+
+/**
+  * _puts - function that runs stdout.
+  * @str:- single user input.
+  */
+
+void _puts(char *s)
+{
+	printf("%s\n", str);  
+}
+
+
+/**
+  * _strcpy - Function that copy.
+  * @dest:- single user input.
+  * @src:- single user input.
+  * Return:- always 0 (success).
+  */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+
+	}
+	dest[i] = '\0';
+
+	return (dest);
+}
+
+
+/**
+  * _atoi - function that converts strings to numbers.
+  * @s:- single user input.
+  * Return:- Always 0 (success).
+  */
+
+
+int _atoi(char *s)
+{
+	int i, h, p;
+
+	h = 0;
+	p = -1;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] == '-')
+			p *= -1;
+
+		if (s[i] > 47 && s[i] < 58)
+		{
+			if (h < 0)
+			{
+				h = (h * 10) - (s[i] - '0');
+			}
+			else
+			{
+				h = (s[i] - '0') * -1;
+			}
+
+			if (s[i + 1] < 48 || s[i + 1] > 57)
+			{
+				break;
+			}
+		}
+	}
+	if (p < 0)
+		h *= -1;
+
+	return (h);
+}
+
+
+/**
+  * _strcat - Function that concatenates strings.
+  * @dest:- single input value.
+  * @src:- single input value.
+  * Return:- Always 0 (success).
+  */
+
+
+char *_strcat(char *dest, char *src)
+{
+	int index;
+	int dest_len = 0;
+
+	while (dest[dest_len])
+	{
+		dest_len++;
+
+	}
+
+	for (index = 0; src[index] != 0; index++)
+	{
+		dest[dest_len] = src[index];
+		dest_len++;
+
+	}
+	dest[dest_len] = '\0';
+
+	return (dest);
+}
+
+
+/**
+  * _strncat - Function that concentrates two strings.
+  * @dest:- The first string.
+  * @src:- The second string.
+  * @n:- the number of bytes to be used from src.
+  * Return:- Always 0(success).here we return the value of dest after joining.
+  */
+
+
+char *_strncat(char *dest, char *src, int n)
+{
+	int i = 0;
+	int dest_len = 0;
+
+	while (dest[i++])
+	{
+		dest_len++;
+
+	}
+
+	for (i = 0; src[i] && i < n; i++)
+	{
+		dest[dest_len++] = src[i];
+
+	}
+
+	return (dest);
+}
+
+
+/**
+  * _strncpy - Function that copies strings.
+  * @dest:- single user input.
+  * @src:- single user input.
+  * @n:- naximum number of bytes.
+  * Return:- Always 0 (success)
+  */
+
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	int index = 0;
+	int src_len = 0;
+
+	while (src[index++])
+	{
+		src_len++;
+	}
+
+	for (index = 0; src[index] && index < n; index++)
+	{
+		dest[index] = src[index];
+	}
+
+	for (index = src_len; index < n; index++)
+	{
+		dest[index] = '\0';
+
+	}
+	return (dest);
+}
+
+
+/**
+  * _strcmp - Function that compares strings.
+  * @s1:- single user input.
+  * @s2:- single user input.
+  * Return:- Always 0 (success)
+  */
+
+
+int _strcmp(char *s1, char *s2)
+{
+	while (*s1 && *s2 && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+
+	}
+	return (*s1 - *s2);
+}
+
+
+/**
+  * _memset - function that fills memory with constant byte.
+  * @s:- single user input pointer.
+  * @n:- single user input.
+  * @b: constant byte.
+  * Return:- Always 0 (success).
+  */
+
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int k;
+
+	for (k = 0; k < n; k++)
+	{
+		s[k] = b;
+
+	}
+	return (s);
+}
+
+
+/**
+  * _memcpy - function that copies memory.
+  * @dest:- memory area.
+  * @src:- memory area.
+  * @n:- size of memory to be copied.
+  * Return:- Always 0 (success)
+  */
+
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+	unsigned int k;
+
+	for (k = 0; k < n; k++)
+	{
+		dest[k] = src[k];
+	}
+	return (dest);
+}
+
+
+/**
+  * _strchr - function that locates a character in a string.
+  * @c:- single user input.
+  * @s:- single user input.
+  * Return:- Always 0 (success).
+  */
+
+
+char *_strchr(char *s, char c)
+{
+		while (*s)
+	{
+		if (*s != c)
+			s++;
+		else
+			return (s);
+
+	}
+	if (c == '\0')
+		return (s);
+
+	return (NULL);
+}
+
+
+unsigned int _strspn(char *s, char *accept)
+{
+
+
+}
+
+
+/**
+  * _strpbrk - function that searches for any set of bytes from astring.
+  * @s:- single user input.
+  * @accept:- single user input.
+  * Return:- Always 0 (success0 / returns pointer to bytes ins.
+  */
+
+
+char *_strpbrk(char *s, char *accept)
+{
+	int k;
+
+	while (*s)
+	{
+		for (k = 0; accept[k]; k++)
+		{
+			if (*s == accept[k])
+				return (s);
+		}
+		s++;
+
+	}
+	return (NULL);
+}
+
+
+/**
+  * _strstr - Function that locates a substring.
+  * @haystack:- single user input.
+  * @needle:- single user input.
+  * Return:- Always 0 (success) / returns pointer to the located string.
+  */
+
+
+char *_strstr(char *haystack, char *needle)
+{
+
+	int j;
+	int k = 0;
+
+	while (needle[k] != '\0')
+	{
+		k++;
+	}
+
+	while (*haystack)
+	{
+		for (j = 0; needle[j]; j++)
+		{
+			if (haystack[j] != needle[j])
+				break;
+		}
+		if (j != k)
+		{
+			haystack++;
+		}
+		else
+		{
+			return (haystack);
+		}
+	}
+	return (NULL);
+}
