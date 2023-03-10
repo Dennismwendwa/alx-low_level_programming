@@ -3,10 +3,12 @@
 
 /**
   * main - Entry point.
+  * @argc:- commandline args.
+  * @argv:- commandline args.
   * Return:- always 0 (success).
   */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i;
 
