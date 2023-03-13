@@ -16,7 +16,7 @@ int word_length(char *str)
 
 	while (*(str + i) && *(str + i) != ' ')
 	{
-		length ++;
+		length++;
 		i++;
 	}
 	return (length);
@@ -51,7 +51,6 @@ int words_count(char *str)
 	return (wordC);
 }
 
-
 /**
   * strtow - function that splits strings to words
   * @str:- single user input
@@ -62,10 +61,7 @@ char **strtow(char *str)
 {
 	char **string;
 	int i = 0;
-	int word;
-	int w;
-	int letter;
-	int l;
+	int word,  w, letter, l;
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
@@ -82,7 +78,6 @@ char **strtow(char *str)
 	{
 		while (str[i] == ' ')
 			i++;
-	
 	letter = word_length(str + i);
 
 	string[w] = malloc(sizeof(char) * (letter + 1));
@@ -100,50 +95,8 @@ char **strtow(char *str)
 	{
 		string[w][l] = str[i++];
 	}
-
 	string[w][l] = '\0';
 	}
 	string[w] = NULL;
-
 	return (string);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
