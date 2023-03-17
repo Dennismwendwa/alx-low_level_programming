@@ -58,14 +58,11 @@ void exit_err(void)
   * main - function that multiplies two numbers.
   * @argv:- commandline args
   * @argc:- commandline args
-  * @num1:- single user input.
-  * @num2:- single user input
   * Return:- Always 0 (success)
   */
 
 int main(int argc, char *argv[])
 {
-
 	char *s1, *s2;
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
 
