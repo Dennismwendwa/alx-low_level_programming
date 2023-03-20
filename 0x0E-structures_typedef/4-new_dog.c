@@ -4,12 +4,11 @@
 #include "dog.h"
 
 /**
- *
- * new_dog - function name.
- * name:- first member
+ * new_dog - function that creates new dog.
+ * @name:- first member
  * @age:- second member
  * @owner:- third member
- * return:- Always 0 (success)
+ * Return:- Always 0 (success)
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
