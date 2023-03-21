@@ -3,6 +3,44 @@
 
 #include "dog.h"
 
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+
+/**
+  * _strlen - Function that checks length of str
+  * @s:- single user input
+  * Return:- Always 0 (success)
+  */
+
+int _strlen(char *s)
+{
+	int c = 0;
+	for (; *s != '\0'; s++)
+		c++;
+
+	return (c);
+
+}
+
+/**
+  * _strcp - function that copy string
+  * @dest:- single user input
+  * @src:- single user input
+  * Return: Always 0 (success)
+  */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i;
+	for (i = 0; src[i] != '\0'; i++)
+	{
+		dest[i] = src[i];
+
+	}
+	dest[i++] = '\0';
+	return (dest);
+}
+
 /**
  * new_dog - function that creates new dog.
  * @name:- first member
