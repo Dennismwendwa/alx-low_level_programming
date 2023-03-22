@@ -4,17 +4,16 @@
 #include "3-calc.h"
 
 /**
-  * op_add - function that add two numbers
+  * op_add - function that adds numbers
   * @num1:- single user input
   * @num2:- single user input
-  * @add:- results
   * Return:- Always 0 (success)
   */
 
 int op_add(int num1, int num2)
 {
 	int sum;
-	
+
 	sum = num1 + num2;
 	return (sum);
 }
@@ -23,7 +22,6 @@ int op_add(int num1, int num2)
   * op_sub - function that subtracts two numbers
   * @num1:- single user input
   * @num2:- single user input
-  * @sub:- results
   * Return:- Always 0 (success)
   */
 
@@ -39,7 +37,6 @@ int op_sub(int num1, int num2)
   * op_mul - function that multiplies two numbers
   * @num1:- single user input
   * @num2:- single user input
-  * @mul:- results
   * Return:- Always 0 (success)
   *
   */
@@ -56,7 +53,6 @@ int op_mul(int num1, int num2)
   * op_div - function that divides two numbers
   * @num1:- single user input
   * @num2:- single user input
-  * @div:- results
   * Return:- Always 0 (success)
   *
   */
@@ -79,7 +75,6 @@ int op_div(int num1, int num2)
   * op_mod - function modes two number
   * @num1:- single user input
   * @num2:- single user input
-  * @mod:- mode of the numbers
   * Return:- Always 0 (success)
   *
   */
