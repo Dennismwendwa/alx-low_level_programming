@@ -3,6 +3,8 @@
 
 /**
   * main - entry point
+  * @argc:- commandline args count
+  * @argv:- commandline args value
   * Return:- Always 0 (success)
   */
 
@@ -15,7 +17,7 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(i);
+		exit(1);
 	}
 	btes = atoi(argv[1]);
 
