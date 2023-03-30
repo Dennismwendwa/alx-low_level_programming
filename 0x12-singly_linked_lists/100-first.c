@@ -1,11 +1,11 @@
 #include <stdio.h>
 
+void print_before(void) __attribute__((constructor));
+
 /**
   * print_before - function that prints before main
   * Return:- Always 0 (success)
   */
-
-void print_before(void) __attribute__ ((constructor));
 
 void print_before(void)
 {
