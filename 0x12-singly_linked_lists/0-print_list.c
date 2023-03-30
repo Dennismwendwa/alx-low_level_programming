@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
-  * size_t print_list - function that prints all elements of list
+  * print_list - function that prints all elements of list
   * @h:- single user input
   * Return:- Always 0 (success)
   */
