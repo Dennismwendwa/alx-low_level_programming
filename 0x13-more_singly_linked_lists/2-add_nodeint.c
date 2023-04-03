@@ -2,7 +2,8 @@
 
 /**
   * add_nodeint - function that add node at the beginning
-  * @h:- head of the list
+  * @n:- head of the list
+  * @head:- head of the list
   * Return:- Always 0 (success)
   */
 
