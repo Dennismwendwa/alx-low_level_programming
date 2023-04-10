@@ -14,7 +14,7 @@ int main(int cnt, char *av[])
 	mode_t acces = S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH;
 
 	if (cnt != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(98);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
 	frm = open(av[1], O_RDONLY);
 	if (frm == -1)
@@ -27,7 +27,7 @@ int main(int cnt, char *av[])
 	{
 		rdmwanz = read(frm, ch, SIZE);
 		if (rdmwanz == -1)
-			dprintf(STDERR_FILENO, "Error: Can't read file %s\n", av[1]), exit(98);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 		if (rdmwanz > 0)
 		{
 			wrmwanz = write(kwnda, ch, rdmwanz);
