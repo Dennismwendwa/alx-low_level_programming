@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
-  * flib_bits - function that flipsbits
+  * flip_bits - Function that flipsbits
   * @m:- single user input
   * @n:- single user input
   * Return:- Always 0 (success)
