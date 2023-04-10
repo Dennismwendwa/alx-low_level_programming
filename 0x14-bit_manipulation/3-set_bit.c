@@ -14,6 +14,9 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned int size;
 	int l;
 
+	if (n == 0)
+		return (-1);
+
 
 	size = 8 * sizeof(*n) - 1;
 	l = 1 << index;
