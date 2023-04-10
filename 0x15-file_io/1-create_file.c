@@ -27,7 +27,7 @@ int create_file(const char *filename, char *text_content)
 	else
 		return (1);
 
-	close (createdfile);
+	close(createdfile);
 
 	return ((size != -1) ? 1 : -1);
 }
