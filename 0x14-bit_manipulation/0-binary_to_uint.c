@@ -9,19 +9,23 @@
   * Return:- Always 0 (success)
   */
 
+unsigned int _atoi(char c)
+{
+	return ((unsigned int) c - '0');
+}
+
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int number = 0;
 	unsigned int wegt = 1;
+	unsigned int tmp = 0;
 
 	int i = strlen(b) - 1;
 
-	for (; i >= 0; i--)
+	for (; b[i]; wegt = wegt * 2, i--)
 	{
-		if (b[i] == '1')
-			number = number + wegt;
-
-		wegt = wegt * 2;
+		tmp = _atoi(b[i]);
+		number += tmp * wegt;
 
 		if (b[i] != '1' && b[i] != '0')
 			return (0);
