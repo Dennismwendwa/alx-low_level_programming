@@ -9,23 +9,29 @@
 
 int append_text_to_file(const char *filename, char *text_content)
 {
-	int createdfile;
-	int size = 0;
-	int begg;
+	FILE *createdfile;
+	int size;
 
 	if (filename == NULL)
 		return (-1);
 
-	createdfile = open(filename, O_WRONLY | O_APPEND);
-	if (text_content == NULL)
+	if (!text_content || strlen(text_content) == 0)
+	{
+		size = open(filename, O_RDWR);
+		if (size == -1)
+		{
+			close(size);
+			return (-1);
+		}
+		close(size);
+		return (1);
+	}
+	createdfile = fopen(filename, "a");
+	if (!createdfile)
 		return (-1);
-	if (createdfile == -1)
+	size = fputs(text_content, createdfile);
+	if (size == -1)
 		return (-1);
-
-	for (; text_content[size]; size++)
-		;
-	begg = (write(createdfile, text_content, size));
-	close(createdfile);
-
-	return (begg == -1 ? -1 : 1);
+	fclose(createdfile);
+	return (1);
 }

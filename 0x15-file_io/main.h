@@ -6,6 +6,8 @@
 #include <string.h>
 #include <fcntl.h>
 #include <unistd.h>
+
+#include <elf.h>
 #define SIZE 1204
 
 ssize_t read_textfile(const char *filename, size_t letters);
