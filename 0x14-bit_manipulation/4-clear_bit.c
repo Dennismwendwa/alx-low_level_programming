@@ -10,28 +10,17 @@
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int shujaa = 1;
-	unsigned int tmp;
-	unsigned int size;
+	unsigned int shujaa;
+	unsigned k, l;
 
-	tmp = *n;
-	size = sizeof(size_t) * 8;
+	shujaa = index > 8 * sizeof(*n);
 
-	tmp >>= index;
-	if (tmp & 1)
-	{
-		shujaa <<= index;
+	k = ~(1 << index);
+	*n = *n & k;
 
-		*n ^= shujaa;
-		return (1);
-	}
-	else
-	{
-		return (1);
-	}
+	l = shujaa ? -1 : 1;
 
-	if (index > size)
-	{
-		return (1);
-	}
+	return (l);
+
+
 }
