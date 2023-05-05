@@ -11,7 +11,7 @@
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int shujaa;
-	unsigned k, l;
+	unsigned int k, l;
 
 	shujaa = index > 8 * sizeof(*n);
 
