@@ -10,34 +10,30 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t kuku, word;
-	int filed;
-	char *buff;
+	int varone = 1;
+	int chars = 0;
+	int fl;
+	char string[buff];
 
 	if (filename == NULL)
-		return (0)
-
-	buff = malloc(sizeof(char) * letters);
-	if (buff == NULL)
 		return (0);
 
-	filed = open(filename, O_RDONLY);
-	if (filed == -1)
+	fl = open(filename, O_RDONLY);
+	if (fl == -1)
 		return (0);
 
-	word = read(filed, buff, letters);
-	if (word == -1)
-		return (0);
+	while (varone != 0 && letters > buff)
+	{
+		varone = read(fl, string, buff);
+		write(STDOUT_FILENO, string, varone);
+		chars += varone;
+		letters -= buff;
+	}
+	varone = read(fl, string, letters);
+	write(STDOUT_FILENO, string, varone);
+	chars += varone;
+	close(fl);
 
-	kuku = write(STDOUT_FILENO, buff, word);
-	if (kuku == -1)
-		return (0);
 
-	if (close(filed) == -1)
-		return (0);
-
-	free(buff);
-
-	return (kuku);
-
+	return (chars);
 }
