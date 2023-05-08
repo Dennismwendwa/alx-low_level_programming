@@ -1,7 +1,12 @@
 
 #include "main.h"
 
-
+/**
+  * read_textfile - function that reads file
+  * @filename:- file to read
+  * @letters:- amount of chars to read and print
+  * Return:- Always 0
+  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -18,11 +23,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 
 	word = read(filed, buff, letters);
-	if(word == -1)
+	if (word == -1)
 		return (0);
 
 	kuku = write(STDOUT_FILENO, buff, word);
-	if(kuku == -1)
+	if (kuku == -1)
 		return (0);
 
 	if (close(filed) == -1)
