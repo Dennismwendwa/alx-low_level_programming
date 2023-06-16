@@ -12,40 +12,44 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *old;
 	dlistint_t *nw;
+	unsigned l = 0;
 
-	nw = malloc(sizeof(dlistint_t));
-
-	if (!nw)
-		return (NULL);
-
-	nw->n = n;
-	old = *h;
-
-	if (!old)
-	{
-		nw->prev = NULL;
-		nw->next = NULL;
-		*h = nw;
-		return (nw);
-	}
+	old = NULL;
 
 	if (idx == 0)
+		old = add_dnodeint(h, n);
+
+	else
 	{
-		nw->prev = NULL;
-		nw->next = old;
-		old->prev = nw;
-		return (nw);
+		nw = *h;
+		l = 1;
+		if (nw != NULL)
+			while (nw->prev != NULL)
+				nw = nw->prev;
+		while (nw != NULL)
+		{
+			if (l == idx)
+			{
+				if (nw->next == NULL)
+					old = add_dnodeint_end(h, n);
+				else
+				{
+					old = malloc(sizeof(dlistint_t));
+					if (old != NULL)
+					{
+						old->n = n;
+						old->next = nw->next;
+						old->prev = nw;
+
+						nw->next->prev = old;
+						nw->next = old;
+					}
+				}
+				break;
+			}
+			old = old->next;
+			l++;
+		}
 	}
-
-	for (; idx > 1 && old->next; idx--)
-		old = old->next;
-	if (idx > 1 && !old->next)
-		return (NULL);
-	nw->prev = old;
-	nw->next = old->next ? old->next : NULL;
-
-	if (old->next)
-		old->next->prev = nw;
-	old->next = old->next && idx > 1 ? NULL : nw;
-	return (nw);
+	return (old);
 }
