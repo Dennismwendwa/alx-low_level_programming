@@ -10,46 +10,43 @@
 
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *old;
-	dlistint_t *nw;
-	unsigned l = 0;
+	dlistint_t *nod;
+	dlistint_t *tmp;
+	unsigned int l = 0;
 
-	old = NULL;
-
+	nod = NULL;
 	if (idx == 0)
-		old = add_dnodeint(h, n);
-
+		nod = add_dnodeint(h, n);
 	else
 	{
-		nw = *h;
+		tmp = *h;
 		l = 1;
-		if (nw != NULL)
-			while (nw->prev != NULL)
-				nw = nw->prev;
-		while (nw != NULL)
+		if (tmp != NULL)
+			while (tmp->prev != NULL)
+				tmp = tmp->prev;
+		while (tmp != NULL)
 		{
 			if (l == idx)
 			{
-				if (nw->next == NULL)
-					old = add_dnodeint_end(h, n);
+				if (tmp->next == NULL)
+					nod = add_dnodeint_end(h, n);
 				else
 				{
-					old = malloc(sizeof(dlistint_t));
-					if (old != NULL)
+					nod = malloc(sizeof(dlistint_t));
+					if (nod != NULL)
 					{
-						old->n = n;
-						old->next = nw->next;
-						old->prev = nw;
-
-						nw->next->prev = old;
-						nw->next = old;
+						nod->n = n;
+						nod->next = tmp->next;
+						nod->prev = tmp;
+						tmp->next->prev = nod;
+						tmp->next = nod;
 					}
 				}
 				break;
 			}
-			old = old->next;
+			tmp = tmp->next;
 			l++;
 		}
 	}
-	return (old);
+	return (nod);
 }
