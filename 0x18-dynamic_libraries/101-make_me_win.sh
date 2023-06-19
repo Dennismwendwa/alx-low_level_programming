@@ -1,3 +1,3 @@
 #!/bin/bash
-cp /bin/true /tmp/winning_numbers.so
-export LD_PRELOAD=/tmp/winning_numbers.so
+wget -P /tmp https://github.com/baccrie/alx-low_level_programming/raw/master/0x18-dynamic_libraries/libmask.so
+export LD_PRELOAD=/tmp/libmask.so
