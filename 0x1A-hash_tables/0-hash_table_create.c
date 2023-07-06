@@ -12,28 +12,28 @@ hash_table_t *hash_table_create(unsigned long int size)
 	hash_table_t *hashtable;
 	unsigned int j;
 
-	if (1 > size)
+	if (size < 1)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	hashtable = malloc(sizeof(hash_table_t));
 	if (!hashtable)
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	hashtable->array = malloc(sizeof(hash_table_t *) * size);
 	if (!(hashtable->array))
 	{
-		return NULL;
+		return (NULL);
 	}
 
 	for (j = 0; j < size; j++)
 	{
-		hashtable->array[j] = NULL;
+		hashtable->array[j] = (NULL);
 	}
 	hashtable->size = size;
 
-	return hashtable;
+	return (hashtable);
 }
