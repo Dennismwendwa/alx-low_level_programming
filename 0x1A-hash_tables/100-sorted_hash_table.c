@@ -11,14 +11,14 @@ shash_table_t *shash_table_create(unsigned long int size)
 	shash_table_t *new_tble = NULL;
 
 	new_tble = malloc(sizeof(shash_table_t));
-	if (!new_tble)
+	if (new_tble ==NULL)
 	{
 		return (NULL);
 	}
 	new_tble->size = size;
 
 	new_tble->array = malloc(sizeof(void *) * size);
-	if (!new_tble->array)
+	if (!(new_tble->array))
 	{
 		free(new_tble);
 		return (NULL);
@@ -43,7 +43,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	unsigned long int indx;
 	shash_node_t *nw = NULL, *ptm = NULL;
 
-	if (!ht || !value || (strlen(key) == 0))
+	if (!ht || !key || (strlen(key) == 0))
 		return (0);
 	indx = hash_djb2((const unsigned char *)key) % ht->size;
 	nw = malloc(sizeof(shash_node_t));
@@ -71,7 +71,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 				nw->sprev->snext = nw;
 			return (1);
 		}
-		if (ptm->next)
+		if (ptm->snext)
 			ptm = ptm->snext;
 		else
 			break;
