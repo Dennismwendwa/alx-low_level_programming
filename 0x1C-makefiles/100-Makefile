@@ -4,7 +4,7 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 OBJ = $(SRC:.c=.o)
 NAME = school
 
-all: $(NAME)
+all: m.h $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ)
@@ -20,7 +20,3 @@ fclean: clean oclean
 re: oclean all
 
 .PHONY: all clean oclean fclean re
-
-ifeq ($(any m.h),m.h)
--include m.h
-endif
