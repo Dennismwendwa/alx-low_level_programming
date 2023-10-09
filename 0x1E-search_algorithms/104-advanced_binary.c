@@ -7,7 +7,7 @@ int advanced_binary(int *array, size_t size, int value)
 	if (!array || size == 0)
 		return (-1);
 
-	return binary_search_recurs(array, 0, size - 1, value);
+	return (binary_search_recurs(array, 0, size - 1, value));
 }
 
 int binary_search_recurs(int *array, int l, int h, int value)
@@ -15,7 +15,7 @@ int binary_search_recurs(int *array, int l, int h, int value)
 	int mid = (l + h) / 2;
 	int k;
 
-	if ( l <= h)
+	if (l <= h)
 	{
 		printf("Searching in array: ");
 		for (k = l; k <= h; k++)
