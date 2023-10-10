@@ -2,6 +2,14 @@
 
 int binary_search_recurs(int *array, int l, int h, int value);
 
+/**
+ * advanced_binary - function that search for elements using binary search
+ * @size:- size of the array
+ * @array:- pointer to the array
+ * @value:- value to search for
+ * Return:- Always 0
+ */
+
 int advanced_binary(int *array, size_t size, int value)
 {
 	if (!array || size == 0)
@@ -9,6 +17,16 @@ int advanced_binary(int *array, size_t size, int value)
 
 	return (binary_search_recurs(array, 0, size - 1, value));
 }
+
+
+/**
+ * binary_search_recurs - function that searches for element
+ * @array:- pointer to the array
+ * @l:- low bound
+ * @h:- higher bound
+ * @value:- element to search for
+ * Return:- Always 0
+ */
 
 int binary_search_recurs(int *array, int l, int h, int value)
 {
@@ -42,5 +60,4 @@ int binary_search_recurs(int *array, int l, int h, int value)
 	}
 
 	return (-1);
-
 }
